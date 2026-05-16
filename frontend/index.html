@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Score Predictor</title>
-    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="/frontend/style.css" />
 </head>
 
 <body>
@@ -13,13 +14,17 @@
     <div class="container">
 
         <h1>Student Score Predictor</h1>
-        <p class="subtitle">Enter student details to predict expected Math Score</p>
+
+        <p class="subtitle">
+            Enter student details to predict expected Math Score
+        </p>
 
         <form id="prediction-form">
 
             <div class="form-group">
                 <label for="Gender">Gender</label>
-                <select id="Gender">
+
+                <select id="Gender" name="Gender">
                     <option value="female">Female</option>
                     <option value="male">Male</option>
                 </select>
@@ -27,7 +32,8 @@
 
             <div class="form-group">
                 <label for="EthnicGroup">Ethnic Group</label>
-                <select id="EthnicGroup">
+
+                <select id="EthnicGroup" name="EthnicGroup">
                     <option value="group A">Group A</option>
                     <option value="group B">Group B</option>
                     <option value="group C">Group C</option>
@@ -38,7 +44,8 @@
 
             <div class="form-group">
                 <label for="ParentEduc">Parent Education</label>
-                <select id="ParentEduc">
+
+                <select id="ParentEduc" name="ParentEduc">
                     <option value="some high school">Some High School</option>
                     <option value="high school">High School</option>
                     <option value="some college">Some College</option>
@@ -50,7 +57,8 @@
 
             <div class="form-group">
                 <label for="LunchType">Lunch Type</label>
-                <select id="LunchType">
+
+                <select id="LunchType" name="LunchType">
                     <option value="standard">Standard</option>
                     <option value="free/reduced">Free/Reduced</option>
                 </select>
@@ -58,15 +66,22 @@
 
             <div class="form-group">
                 <label for="TestPrep">Test Preparation</label>
-                <select id="TestPrep">
+
+                <select id="TestPrep" name="TestPrep">
                     <option value="none">None</option>
                     <option value="completed">Completed</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="ParentMaritalStatus">Parent Marital Status</label>
-                <select id="ParentMaritalStatus">
+                <label for="ParentMaritalStatus">
+                    Parent Marital Status
+                </label>
+
+                <select
+                    id="ParentMaritalStatus"
+                    name="ParentMaritalStatus"
+                >
                     <option value="married">Married</option>
                     <option value="single">Single</option>
                     <option value="divorced">Divorced</option>
@@ -76,7 +91,8 @@
 
             <div class="form-group">
                 <label for="PracticeSport">Practice Sport</label>
-                <select id="PracticeSport">
+
+                <select id="PracticeSport" name="PracticeSport">
                     <option value="never">Never</option>
                     <option value="sometimes">Sometimes</option>
                     <option value="regularly">Regularly</option>
@@ -85,7 +101,8 @@
 
             <div class="form-group">
                 <label for="IsFirstChild">First Child</label>
-                <select id="IsFirstChild">
+
+                <select id="IsFirstChild" name="IsFirstChild">
                     <option value="yes">Yes</option>
                     <option value="no">No</option>
                 </select>
@@ -93,15 +110,22 @@
 
             <div class="form-group">
                 <label for="TransportMeans">Transport Means</label>
-                <select id="TransportMeans">
+
+                <select id="TransportMeans" name="TransportMeans">
                     <option value="school_bus">School Bus</option>
                     <option value="private">Private</option>
                 </select>
             </div>
 
             <div class="form-group">
-                <label for="WklyStudyHours">Weekly Study Hours</label>
-                <select id="WklyStudyHours">
+                <label for="WklyStudyHours">
+                    Weekly Study Hours
+                </label>
+
+                <select
+                    id="WklyStudyHours"
+                    name="WklyStudyHours"
+                >
                     <option value="< 5">&lt; 5</option>
                     <option value="5 - 10">5 - 10</option>
                     <option value="> 10">&gt; 10</option>
@@ -109,16 +133,23 @@
             </div>
 
             <div id="loader">
+
                 <div class="ml-loader">
                     <div class="node"></div>
                     <div class="node"></div>
                     <div class="node"></div>
                     <div class="node"></div>
                 </div>
-                <p id="loader-text">Initializing model...</p>
+
+                <p id="loader-text">
+                    Initializing ML prediction engine...
+                </p>
+
             </div>
 
-            <button type="submit">Predict Score</button>
+            <button type="submit">
+                Predict Math Score
+            </button>
 
         </form>
 
@@ -126,7 +157,7 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script src="/frontend/script.js"></script>
 
 </body>
 

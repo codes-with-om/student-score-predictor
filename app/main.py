@@ -1,5 +1,8 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import HTMLResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 import pandas as pd
 
 from app.model_loader import model
@@ -7,17 +10,25 @@ from app.schemas import StudentData
 
 app = FastAPI(title="Student Score Predictor API")
 
+app.mount("/frontend", StaticFiles(directory="frontend"), name="frontend")
+
+templates = Jinja2Templates(directory="frontend")
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # development ke liye okay
+    allow_origins=["*"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-@app.get("/")
-def home():
-    return {"message": "Student Score Predictor API is running"}
+
+@app.get("/", response_class=HTMLResponse)
+def home(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="index.html"
+    )
 
 
 @app.get("/health")
@@ -39,6 +50,7 @@ def predict_score(data: StudentData):
 
     if study_hours not in study_hours_mapping:
         return {
+            "success": False,
             "error": "Invalid WklyStudyHours value"
         }
 

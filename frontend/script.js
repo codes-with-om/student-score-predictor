@@ -42,7 +42,7 @@ form.addEventListener("submit", async function (event) {
 
   try {
     const response = await fetch(
-      "https://student-score-predictor-u8y0.onrender.com/predict",
+      "/predict",
       {
         method: "POST",
         headers: {
