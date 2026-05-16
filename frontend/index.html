@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Score Predictor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Student Score Predictor</h1>
+        <p class="subtitle">Enter student details to predict expected Math Score</p>
+
+        <form id="prediction-form">
+
+            <div class="form-group">
+                <label for="Gender">Gender</label>
+                <select id="Gender">
+                    <option value="female">Female</option>
+                    <option value="male">Male</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="EthnicGroup">Ethnic Group</label>
+                <select id="EthnicGroup">
+                    <option value="group A">Group A</option>
+                    <option value="group B">Group B</option>
+                    <option value="group C">Group C</option>
+                    <option value="group D">Group D</option>
+                    <option value="group E">Group E</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ParentEduc">Parent Education</label>
+                <select id="ParentEduc">
+                    <option value="some high school">Some High School</option>
+                    <option value="high school">High School</option>
+                    <option value="some college">Some College</option>
+                    <option value="associate's degree">Associate's Degree</option>
+                    <option value="bachelor's degree">Bachelor's Degree</option>
+                    <option value="master's degree">Master's Degree</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="LunchType">Lunch Type</label>
+                <select id="LunchType">
+                    <option value="standard">Standard</option>
+                    <option value="free/reduced">Free/Reduced</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="TestPrep">Test Preparation</label>
+                <select id="TestPrep">
+                    <option value="none">None</option>
+                    <option value="completed">Completed</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="ParentMaritalStatus">Parent Marital Status</label>
+                <select id="ParentMaritalStatus">
+                    <option value="married">Married</option>
+                    <option value="single">Single</option>
+                    <option value="divorced">Divorced</option>
+                    <option value="widowed">Widowed</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="PracticeSport">Practice Sport</label>
+                <select id="PracticeSport">
+                    <option value="never">Never</option>
+                    <option value="sometimes">Sometimes</option>
+                    <option value="regularly">Regularly</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="IsFirstChild">First Child</label>
+                <select id="IsFirstChild">
+                    <option value="yes">Yes</option>
+                    <option value="no">No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="TransportMeans">Transport Means</label>
+                <select id="TransportMeans">
+                    <option value="school_bus">School Bus</option>
+                    <option value="private">Private</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="WklyStudyHours">Weekly Study Hours</label>
+                <select id="WklyStudyHours">
+                    <option value="< 5">&lt; 5</option>
+                    <option value="5 - 10">5 - 10</option>
+                    <option value="> 10">&gt; 10</option>
+                </select>
+            </div>
+
+            <div id="loader">
+                <div class="ml-loader">
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                    <div class="node"></div>
+                </div>
+                <p id="loader-text">Initializing model...</p>
+            </div>
+
+            <button type="submit">Predict Score</button>
+
+        </form>
+
+        <h2 id="result"></h2>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
