@@ -1,0 +1,33 @@
+name: CI - Student Score Predictor
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Check app imports
+        run: |
+          python -c "from app.main import app; print('FastAPI app imported successfully')"
+
+      - name: Build Docker image
+        run: |
+          docker build -t student-score-predictor .
